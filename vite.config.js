@@ -27,13 +27,11 @@ export default defineConfig({
         '@expo/vector-icons',
         'react-confetti',
         'react-native-safe-area-context',
-        'react',
-        'react-dom',
         '@vitejs/plugin-react'
       ],
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
+          vendor: ['react-router-dom'],
           icons: ['react-native-vector-icons', '@expo/vector-icons'],
           confetti: ['react-confetti']
         }
