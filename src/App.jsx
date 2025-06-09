@@ -1,11 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Provider as AuthProvider } from './context/AuthContext';
+import { Provider as AnalyticsProvider } from './context/AnalyticsContext';
+import { Provider as RewardsProvider } from './context/RewardsContext';
+import { ContextProvider } from './context/ContextProvider';
+import { theme } from './theme/theme';
+import RewardsStoreScreen from './screens/RewardsStoreScreen';
+import './index.css';
+
+const Stack = createNativeStackNavigator();
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <AuthProvider>
       <AnalyticsProvider>
