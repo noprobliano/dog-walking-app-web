@@ -1,7 +1,7 @@
 [build]
   base = "/"
   publish = "dist"
-  command = "npm install --legacy-peer-deps && npm install -g vite && npm run build"
+  command = "npm install --legacy-peer-deps && npx vite build"
   environment = { NODE_VERSION = "18", NODE_ENV = "production" }
 
 [[redirects]]

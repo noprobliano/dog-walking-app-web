@@ -63,6 +63,7 @@
   "devDependencies": {
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
-    "react-native-safe-area-context": "^4.8.2"
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.4.19"
   }
 }
