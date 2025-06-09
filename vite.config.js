@@ -15,7 +15,8 @@ export default defineConfig({
       'react-native-web',
       'react-native-vector-icons',
       'react-native-web-vector-icons',
-      '@expo/vector-icons'
+      '@expo/vector-icons',
+      'react-native-safe-area-context'
     ],
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
@@ -39,7 +40,8 @@ export default defineConfig({
         'react-native-web/Libraries/Utilities/Platform.ios',
         'react-native-web/Libraries/Utilities/Platform.android',
         'react-native-web/Libraries/Utilities/Platform.ios.js',
-        'react-native-web/Libraries/Utilities/Platform.android.js'
+        'react-native-web/Libraries/Utilities/Platform.android.js',
+        'react-native-safe-area-context'
       ],
       output: {
         manualChunks: {
