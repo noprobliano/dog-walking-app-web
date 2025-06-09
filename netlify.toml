@@ -1,7 +1,7 @@
 [build]
   base = "/"
   publish = "dist"
-  command = "npm install --legacy-peer-deps && npm install vite@6.3.5 && npx vite build"
+  command = "npm install --legacy-peer-deps && npm install vite@6.3.5 && npx vite --config vite.config.js build"
   environment = { NODE_VERSION = "18", NODE_ENV = "production" }
   [build.rollupOptions]
     external = ["vite"]
