@@ -1,15 +1,6 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  Image,
-  Alert,
-  SafeAreaView
-} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Alert, SafeAreaView } from 'react-native-web';
+import { FontAwesome } from '@expo/vector-icons';
 import { theme } from '../theme/theme';
 import { useRewards } from '../context/RewardsContext';
 
