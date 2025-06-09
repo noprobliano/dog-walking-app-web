@@ -1,7 +1,5 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet } from 'react-native-web';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CustomIcon from "./components/CustomIcon.jsx";
 import { theme } from './theme/theme';
 import BottomTabNavigator from './navigation/BottomTabNavigator';
@@ -36,161 +34,41 @@ import VerificationScreen from './screens/VerificationScreen';
 import VerificationStatusScreen from './screens/VerificationStatusScreen';
 import VerificationBenefitsScreen from './screens/VerificationBenefitsScreen';
 
-const Stack = createStackNavigator();
-
-const defaultScreenOptions = {
-  headerStyle: {
-    backgroundColor: theme.colors.primary,
-  },
-  headerTintColor: theme.colors.backgroundLight,
-  headerTitleStyle: {
-    fontWeight: 'bold',
-  },
-  headerBackTitleStyle: {
-    color: theme.colors.primary,
-  },
-  headerBackImage: () => (
-    <CustomIcon name="arrow-back" size={24} color={theme.colors.backgroundLight} />
-  ),
-  headerBackImageStyle: {
-    width: 24,
-    height: 24,
-  },
-  headerLeftContainerStyle: {
-    marginLeft: 10,
-  },
-};
-
 function App() {
   return (
     <AuthProvider>
       <AnalyticsProvider>
         <RewardsProvider>
           <ContextProvider>
-            <NavigationContainer theme={{
-              dark: false,
-              colors: {
-                primary: theme.colors.primary,
-                background: theme.colors.background,
-                card: theme.colors.backgroundLight,
-                text: theme.colors.text,
-                border: theme.colors.border,
-                notification: theme.colors.primary,
-              }
-            }}>
+            <Router>
               <div className="container">
-                <Stack.Navigator 
-                  initialRouteName="Auth" 
-                  screenOptions={defaultScreenOptions}
-                >
-                  <Stack.Screen 
-                    name="Auth" 
-                    component={LoginScreen}
-                    options={{ title: 'Login' }}
-                  />
-                  <Stack.Screen 
-                    name="Register" 
-                    component={RegisterScreen}
-                    options={{ title: 'Register' }}
-                  />
-                  <Stack.Screen 
-                    name="Main" 
-                    component={BottomTabNavigator}
-                    options={{ headerShown: false }}
-                  />
-                  <Stack.Screen 
-                    name="Walk" 
-                    component={WalkScreen}
-                    options={{ title: 'Walk Your Dog' }}
-                  />
-                  <Stack.Screen 
-                    name="Chat" 
-                    component={ChatScreen}
-                    options={{ title: 'Chat' }}
-                  />
-                  <Stack.Screen 
-                    name="Payment" 
-                    component={PaymentScreen}
-                    options={{ title: 'Payment' }}
-                  />
-                  <Stack.Screen 
-                    name="Rewards" 
-                    component={RewardsScreen}
-                    options={{ title: 'Rewards' }}
-                  />
-                  <Stack.Screen 
-                    name="RewardsStore" 
-                    component={RewardsStoreScreen}
-                    options={{ title: 'Rewards Store' }}
-                  />
-                  <Stack.Screen 
-                    name="MediaUpload" 
-                    component={MediaUploadScreen}
-                    options={{ title: 'Upload Media' }}
-                  />
-                  <Stack.Screen 
-                    name="PetHealth" 
-                    component={PetHealthDashboardScreen}
-                    options={{ title: 'Pet Health' }}
-                  />
-                  <Stack.Screen 
-                    name="CommunityGroups" 
-                    component={CommunityGroupsScreen}
-                    options={{ title: 'Community Groups' }}
-                  />
-                  <Stack.Screen 
-                    name="LoyaltyProgram" 
-                    component={LoyaltyProgramScreen}
-                    options={{ title: 'Loyalty Program' }}
-                  />
-                  <Stack.Screen 
-                    name="MarketingCampaigns" 
-                    component={MarketingCampaignsScreen}
-                    options={{ title: 'Marketing Campaigns' }}
-                  />
-                  <Stack.Screen 
-                    name="Feed" 
-                    component={FeedScreen}
-                    options={{ title: 'Feed' }}
-                  />
-                  <Stack.Screen 
-                    name="CreatePost" 
-                    component={CreatePostScreen}
-                    options={{ title: 'Create Post' }}
-                  />
-                  <Stack.Screen 
-                    name="Comments" 
-                    component={CommentsScreen}
-                    options={{ title: 'Comments' }}
-                  />
-                  <Stack.Screen 
-                    name="BookWalker" 
-                    component={BookWalkerScreen}
-                    options={{ title: 'Book Walker' }}
-                  />
-                  <Stack.Screen 
-                    name="MessageOwner" 
-                    component={MessageOwnerScreen}
-                    options={{ title: 'Message Owner' }}
-                  />
-                  <Stack.Screen 
-                    name="Verification" 
-                    component={VerificationScreen}
-                    options={{ title: 'Verification' }}
-                  />
-                  <Stack.Screen 
-                    name="VerificationStatus" 
-                    component={VerificationStatusScreen}
-                    options={{ title: 'Verification Status' }}
-                  />
-                  <Stack.Screen 
-                    name="VerificationBenefits" 
-                    component={VerificationBenefitsScreen}
-                    options={{ title: 'Verification Benefits' }}
-                  />
-                </Stack.Navigator>
+                <Routes>
+                  <Route path="/auth" element={<LoginScreen />} />
+                  <Route path="/register" element={<RegisterScreen />} />
+                  <Route path="/main" element={<BottomTabNavigator />} />
+                  <Route path="/walk" element={<WalkScreen />} />
+                  <Route path="/profile" element={<ProfileScreen />} />
+                  <Route path="/analytics" element={<AnalyticsScreen />} />
+                  <Route path="/chat" element={<ChatScreen />} />
+                  <Route path="/payment" element={<PaymentScreen />} />
+                  <Route path="/rewards" element={<RewardsScreen />} />
+                  <Route path="/rewards-store" element={<RewardsStoreScreen />} />
+                  <Route path="/media-upload" element={<MediaUploadScreen />} />
+                  <Route path="/pet-health" element={<PetHealthDashboardScreen />} />
+                  <Route path="/community-groups" element={<CommunityGroupsScreen />} />
+                  <Route path="/loyalty-program" element={<LoyaltyProgramScreen />} />
+                  <Route path="/marketing" element={<MarketingCampaignsScreen />} />
+                  <Route path="/feed" element={<FeedScreen />} />
+                  <Route path="/create-post" element={<CreatePostScreen />} />
+                  <Route path="/comments" element={<CommentsScreen />} />
+                  <Route path="/book-walker" element={<BookWalkerScreen />} />
+                  <Route path="/message-owner" element={<MessageOwnerScreen />} />
+                  <Route path="/verification" element={<VerificationScreen />} />
+                  <Route path="/verification-status" element={<VerificationStatusScreen />} />
+                  <Route path="/verification-benefits" element={<VerificationBenefitsScreen />} />
+                </Routes>
               </div>
-            </NavigationContainer>
+            </Router>
           </ContextProvider>
         </RewardsProvider>
       </AnalyticsProvider>

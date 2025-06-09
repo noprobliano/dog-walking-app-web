@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Link, useLocation } from 'react-router-dom';
 import CustomIcon from "../components/CustomIcon.jsx";
 
 // Screens
@@ -9,39 +9,45 @@ import ProfileScreen from '../screens/ProfileScreen';
 import AnalyticsScreen from '../screens/AnalyticsScreen';
 import ChatScreen from '../screens/ChatScreen';
 
-const Tab = createBottomTabNavigator();
-
 const BottomTabNavigator = () => {
+  const location = useLocation();
+  
+  const getIconName = (route) => {
+    const routeMap = {
+      '/': 'home',
+      '/walk': 'map-pin',
+      '/analytics': 'bar-chart-2',
+      '/profile': 'user',
+      '/chat': 'message-circle'
+    };
+    return routeMap[route] || 'home';
+  };
+
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-
-          if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home';
-          } else if (route.name === 'Walk') {
-            iconName = focused ? 'map-pin' : 'map-pin';
-          } else if (route.name === 'Profile') {
-            iconName = focused ? 'user' : 'user';
-          } else if (route.name === 'Analytics') {
-            iconName = focused ? 'bar-chart-2' : 'bar-chart-2';
-          } else if (route.name === 'Chat') {
-            iconName = focused ? 'message-circle' : 'message-circle';
-          }
-
-          return <Icon name={iconName} size={size} color={color} />;
-        },
-        tabBarActiveTintColor: '#007AFF',
-        tabBarInactiveTintColor: 'gray',
-      })}
-    >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Walk" component={WalkScreen} />
-      <Tab.Screen name="Analytics" component={AnalyticsScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="Chat" component={ChatScreen} />
-    </Tab.Navigator>
+    <div className="bottom-tabs">
+      <nav className="tab-bar">
+        <Link to="/" className={`tab ${location.pathname === '/' ? 'active' : ''}`}>
+          <CustomIcon name={getIconName('/')} size={24} color={location.pathname === '/' ? '#007AFF' : 'gray'} />
+          <span>Home</span>
+        </Link>
+        <Link to="/walk" className={`tab ${location.pathname === '/walk' ? 'active' : ''}`}>
+          <CustomIcon name={getIconName('/walk')} size={24} color={location.pathname === '/walk' ? '#007AFF' : 'gray'} />
+          <span>Walk</span>
+        </Link>
+        <Link to="/analytics" className={`tab ${location.pathname === '/analytics' ? 'active' : ''}`}>
+          <CustomIcon name={getIconName('/analytics')} size={24} color={location.pathname === '/analytics' ? '#007AFF' : 'gray'} />
+          <span>Analytics</span>
+        </Link>
+        <Link to="/profile" className={`tab ${location.pathname === '/profile' ? 'active' : ''}`}>
+          <CustomIcon name={getIconName('/profile')} size={24} color={location.pathname === '/profile' ? '#007AFF' : 'gray'} />
+          <span>Profile</span>
+        </Link>
+        <Link to="/chat" className={`tab ${location.pathname === '/chat' ? 'active' : ''}`}>
+          <CustomIcon name={getIconName('/chat')} size={24} color={location.pathname === '/chat' ? '#007AFF' : 'gray'} />
+          <span>Chat</span>
+        </Link>
+      </nav>
+    </div>
   );
 };
 
