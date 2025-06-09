@@ -36,7 +36,7 @@ import VerificationScreen from './screens/VerificationScreen';
 import VerificationStatusScreen from './screens/VerificationStatusScreen';
 import VerificationBenefitsScreen from './screens/VerificationBenefitsScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const defaultScreenOptions = {
   headerStyle: {
@@ -49,6 +49,9 @@ const defaultScreenOptions = {
   headerBackTitleStyle: {
     color: theme.colors.primary,
   },
+  headerBackImage: () => (
+    <CustomIcon name="arrow-back" size={24} color={theme.colors.backgroundLight} />
+  ),
   headerBackImageStyle: {
     width: 24,
     height: 24,
