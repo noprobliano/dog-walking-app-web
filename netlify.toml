@@ -1,7 +1,7 @@
 [build]
   base = "/"
   publish = "dist"
-  command = "rm -rf node_modules dist .vite && npm install --legacy-peer-deps && npm run build"
+  command = "rm -rf node_modules dist .vite && npm install --legacy-peer-deps && npx vite build"
   environment = { NODE_VERSION = "18" }
   [build.rollupOptions]
     external = ["vite", "react-native", "react-native-web"]
