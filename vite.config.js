@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      'react-native': 'react-native-web',
       '@': path.resolve(__dirname, './src')
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx']
@@ -26,23 +25,13 @@ export default defineConfig({
         'react-native-vector-icons',
         'react-native-web-vector-icons',
         '@expo/vector-icons',
-        '@react-navigation/native',
-        '@react-navigation/stack',
-        '@react-native-async-storage/async-storage',
         'react-confetti',
-        'react-native-safe-area-context',
-        'react-native-web/Libraries/Utilities/codegenNativeComponent',
-        'react-native-web/Libraries/Utilities/Platform',
-        'react-native-web/Libraries/Utilities/Platform.ios',
-        'react-native-web/Libraries/Utilities/Platform.android',
-        'react-native-web/Libraries/Utilities/Platform.ios.js',
-        'react-native-web/Libraries/Utilities/Platform.android.js'
+        'react-native-safe-area-context'
       ],
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          navigation: ['@react-navigation/native', '@react-navigation/stack'],
-          storage: ['@react-native-async-storage/async-storage'],
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          icons: ['react-native-vector-icons', '@expo/vector-icons'],
           confetti: ['react-confetti']
         }
       }
@@ -54,3 +43,4 @@ export default defineConfig({
   },
   base: ''
 })
+
