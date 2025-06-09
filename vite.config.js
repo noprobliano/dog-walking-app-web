@@ -24,6 +24,9 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: true,
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'main.jsx')
+      },
       external: [
         'react-native',
         'react-native-web',
