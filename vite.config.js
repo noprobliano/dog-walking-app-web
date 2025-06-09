@@ -1,14 +1,15 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { fileURLToPath } from 'url'
+import { dirname, resolve } from 'path'
 import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [(await import('@vitejs/plugin-react')).default()],
   resolve: {
     alias: {
       'react-native': 'react-native-web',
-      '@': path.resolve(__dirname, './src')
+      '@': resolve(dirname(fileURLToPath(import.meta.url)), './src')
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
@@ -18,7 +19,7 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'main.jsx')
+        main: resolve(dirname(fileURLToPath(import.meta.url)), 'main.jsx')
       },
       external: [
         'react-native',
