@@ -19,6 +19,7 @@
     "expo-linking": "^6.2.2",
     "expo-modules-core": "^1.6.12",
     "expo-status-bar": "^1.11.1",
+    "glob": "^10.0.0",
     "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-confetti": "^6.4.0",
@@ -65,5 +66,8 @@
     "@types/react-dom": "^18.2.18",
     "@vitejs/plugin-react": "^4.2.1",
     "vite": "^6.3.5"
+  },
+  "overrides": {
+    "glob": "^10.0.0"
   }
 }
