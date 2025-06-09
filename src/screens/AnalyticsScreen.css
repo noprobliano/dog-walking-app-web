@@ -1,0 +1,167 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin: 8px;
+  width: 45%;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007AFF;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.line-chart {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.line-point {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #007AFF;
+  border-radius: 4px;
+}
+
+.line-point-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chart-label {
+  position: absolute;
+  bottom: -20px;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+}
+
+.recent-walks {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.walk-list {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.walk-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.walk-info {
+  flex: 1;
+}
+
+.walk-date {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.walk-details {
+  font-size: 14px;
+  color: #666;
+}
+
+.button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: #007AFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 8px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.data-point {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.data-point-value {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.duration {
+  font-size: 20px;
+  color: #666;
+}

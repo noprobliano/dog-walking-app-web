@@ -1,8 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Alert, SafeAreaView } from 'react-native-web';
-import { FontAwesome } from '@expo/vector-icons';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from "react-native-web";
+import "../App.css";
+import CustomIcon from "../components/CustomIcon.jsx";
 import { theme } from '../theme/theme';
 import { useRewards } from '../context/RewardsContext';
+import { Alert } from 'react-native-web';
 
 const REWARDS = [
   {
@@ -56,7 +58,7 @@ const RewardsStoreScreen = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <div className="container">
       <View style={styles.header}>
         <Text style={styles.title}>Rewards Store</Text>
         <View style={styles.pointsContainer}>
@@ -98,102 +100,84 @@ const RewardsStoreScreen = ({ navigation }) => {
           </TouchableOpacity>
         ))}
       </ScrollView>
-    </SafeAreaView>
+    </div>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colors.background,
-  },
+    backgroundColor: theme.colors.background},
   header: {
     backgroundColor: theme.colors.backgroundLight,
     paddingVertical: theme.spacing.large,
     paddingHorizontal: theme.spacing.large,
     borderBottomWidth: 0.5,
-    borderBottomColor: theme.colors.border,
-  },
+    borderBottomColor: theme.colors.border},
   title: {
     fontSize: theme.typography.title.fontSize,
     fontWeight: theme.typography.title.fontWeight,
-    color: theme.colors.text,
-  },
+    color: theme.colors.text},
   pointsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: theme.spacing.medium,
-  },
+    marginBottom: theme.spacing.medium},
   pointsText: {
     fontSize: 24,
     fontWeight: '600',
     color: theme.colors.primary,
-    marginRight: theme.spacing.small,
-  },
+    marginRight: theme.spacing.small},
   pointsLabel: {
     color: theme.colors.textSecondary,
-    fontSize: 16,
-  },
+    fontSize: 16},
   rewardList: {
-    padding: theme.spacing.large,
-  },
+    padding: theme.spacing.large},
   rewardItem: {
     backgroundColor: theme.colors.backgroundLight,
     borderRadius: theme.borderRadius.medium,
     padding: theme.spacing.medium,
     marginBottom: theme.spacing.medium,
-    ...theme.shadows.small,
-  },
+    ...theme.shadows.small},
   rewardImage: {
     width: 100,
     height: 100,
     borderRadius: theme.borderRadius.medium,
-    marginBottom: theme.spacing.medium,
-  },
+    marginBottom: theme.spacing.medium},
   rewardInfo: {
-    marginBottom: theme.spacing.medium,
-  },
+    marginBottom: theme.spacing.medium},
   rewardName: {
     fontSize: theme.typography.header.fontSize,
     fontWeight: theme.typography.header.fontWeight,
-    color: theme.colors.text,
-  },
+    color: theme.colors.text},
   rewardDescription: {
     color: theme.colors.textSecondary,
     fontSize: theme.typography.body.fontSize,
-    marginTop: theme.spacing.small,
-  },
+    marginTop: theme.spacing.small},
   pointsRequired: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: theme.spacing.medium,
-  },
+    marginTop: theme.spacing.medium},
   pointsRequiredText: {
     color: theme.colors.textSecondary,
     fontSize: theme.typography.body.fontSize,
-    marginRight: theme.spacing.small,
-  },
+    marginRight: theme.spacing.small},
   pointsRequiredValue: {
     fontSize: 20,
     fontWeight: '600',
-    color: theme.colors.primary,
-  },
+    color: theme.colors.primary},
   redeemButton: {
     backgroundColor: theme.colors.primary,
     padding: theme.spacing.medium,
     borderRadius: theme.borderRadius.medium,
     alignItems: 'center',
     marginTop: theme.spacing.medium,
-    ...theme.shadows.small,
-  },
+    ...theme.shadows.small},
   redeemButtonText: {
     color: theme.colors.backgroundLight,
     fontSize: theme.typography.button.fontSize,
-    fontWeight: theme.typography.button.fontWeight,
-  },
+    fontWeight: theme.typography.button.fontWeight},
   disabledButton: {
-    backgroundColor: theme.colors.disabled,
-  }
+    backgroundColor: theme.colors.disabled}
 });
 
 export default RewardsStoreScreen;

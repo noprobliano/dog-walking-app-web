@@ -1,9 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import firestore from '@react-native-firebase/firestore';
-import auth from '@react-native-firebase/auth';
-import ConfettiCannon from 'react-native-confetti-cannon';
+import { Confetti } from 'react-confetti';
 
-const RewardsContext = createContext();
+export const RewardsContext = createContext();
 
 const BADGES = {
   EARLY_BIRD: {

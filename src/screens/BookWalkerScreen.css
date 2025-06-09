@@ -1,0 +1,173 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.header {
+  padding: 16px;
+  background-color: #007AFF;
+  color: white;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+}
+
+.error {
+  color: #FF0000;
+  padding: 12px;
+  background-color: #FFE4E4;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-container {
+  margin-bottom: 16px;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.filter-text {
+  margin-left: 8px;
+  color: #666;
+}
+
+.walkers-container {
+  margin-bottom: 24px;
+}
+
+.walker-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.walker-info {
+  margin-bottom: 16px;
+}
+
+.walker-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.rating-text {
+  margin-left: 4px;
+  color: #FFD700;
+}
+
+.review-count {
+  margin-left: 4px;
+  color: #666;
+}
+
+.price-text {
+  color: #007AFF;
+  font-weight: bold;
+}
+
+.availability-container {
+  margin-bottom: 16px;
+}
+
+.availability-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.availability-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.day-text {
+  margin-right: 16px;
+  font-weight: bold;
+}
+
+.time-slot {
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.time-slot-selected {
+  background-color: #007AFF;
+  color: white;
+}
+
+.duration-container {
+  margin-bottom: 16px;
+}
+
+.duration-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.duration-button {
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.duration-button-selected {
+  background-color: #007AFF;
+  color: white;
+}
+
+.book-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007AFF;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.book-button:hover {
+  background-color: #0056b3;
+}
+
+.book-button-disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.book-button-text {
+  margin-left: 8px;
+}
