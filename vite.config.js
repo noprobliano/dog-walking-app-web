@@ -26,7 +26,10 @@ export default defineConfig({
         'react-native-web-vector-icons',
         '@expo/vector-icons',
         'react-confetti',
-        'react-native-safe-area-context'
+        'react-native-safe-area-context',
+        'react',
+        'react-dom',
+        '@vitejs/plugin-react'
       ],
       output: {
         manualChunks: {
@@ -41,6 +44,9 @@ export default defineConfig({
     port: 3000,
     open: true
   },
-  base: ''
+  base: '',
+  optimizeDeps: {
+    include: ['react', 'react-dom', '@vitejs/plugin-react']
+  }
 })
 
