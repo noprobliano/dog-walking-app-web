@@ -31,8 +31,7 @@ export default defineConfig({
       ],
       output: {
         manualChunks: {
-          vendor: ['react-router-dom'],
-          confetti: ['react-confetti']
+          vendor: ['react-router-dom']
         }
       }
     }
