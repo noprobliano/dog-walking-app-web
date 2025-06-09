@@ -50,8 +50,7 @@ export default defineConfig({
           storage: ['@react-native-async-storage/async-storage'],
           confetti: ['react-confetti']
         }
-      },
-      chunkSizeWarningLimit: 512
+      }
     }
   },
   server: {

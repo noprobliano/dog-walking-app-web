@@ -2,6 +2,7 @@
   base = "/"
   publish = "/dist"
   command = "npm install --legacy-peer-deps && npm run build"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -23,3 +24,6 @@
 
 [context.production.environment]
   NODE_ENV = "production"
+
+[build.publish]
+  directory = "dist"
