@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "cross-env NODE_ENV=production vite build",
+    "preview": "vite preview",
+    "postinstall": "node-sass --include-path ./src",
+    "prebuild": "npm run postinstall"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.22.0",
@@ -65,7 +67,8 @@
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "cross-env": "^7.0.3"
   },
   "overrides": {
     "glob": "^10.0.0"
