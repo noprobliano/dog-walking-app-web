@@ -1,7 +1,7 @@
 [build]
   base = "/"
   publish = "dist"
-  command = "rm -rf node_modules dist .vite && npm install --legacy-peer-deps && npm install vite@4.5.0 @vitejs/plugin-react@4.2.1 && npm install && npx vite@4.5.0 build"
+  command = "rm -rf node_modules dist .vite && npm install --legacy-peer-deps --force && npm install vite@4.5.0 @vitejs/plugin-react@4.2.1 --force && npm install --force && npx vite@4.5.0 build"
   environment = { NODE_VERSION = "18" }
   [build.rollupOptions]
     external = ["vite", "react-native", "react-native-web", "@vitejs/plugin-react"]
