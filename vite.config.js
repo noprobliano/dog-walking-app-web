@@ -32,7 +32,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react-router-dom'],
-          icons: ['react-native-vector-icons', '@expo/vector-icons'],
           confetti: ['react-confetti']
         }
       }
